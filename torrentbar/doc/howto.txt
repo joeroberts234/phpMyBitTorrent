@@ -1,0 +1,41 @@
+INSTALLATION in TorrentPier:
+
+
+1. Unpack to some folder on your server, for example here:
+     http://127.0.0.1/torrentpier/torrentbar/
+
+2. Then edit torrentpier.php. Add the right path to TorrentPier configuration
+   file ($torrentpier_config_path), for example:
+     $torrentpier_config_path = "/home/localhost/www/torrentpier/forum/config.php";
+   or like this:
+     $torrentpier_config_path = "../forum/config.php";
+
+3. (OPTIONAL) Change some other variables in Presets area or view Templates folder
+   to create new templates.
+
+4. Installation Complete :)
+
+
+------------------------------------------------------------------------------
+
+HOW TO USE with TorrentPier:
+
+
+After that, just put to your signature (on Forum):
+  (Without .htaccess)
+    [img]http://127.0.0.1/torrentbar/torrentbar.php/USERID.png[/img]
+  or
+    [img]http://127.0.0.1/torrentbar/torrentbar.php?id=USERID[/img]
+    [img]http://127.0.0.1/torrentbar/torrentbar.php?id=USERID&style=STYLENAME[/img]
+
+  (With .htaccess)
+    [img]http://127.0.0.1/torrentbar/USERID.png[/img]
+    [img]http://127.0.0.1/torrentbar/USERID-STYLENAME.png[/img]
+
+where USERID is your ID on Forum and STYLEID is the name of template. How to find
+out your ID? Easy :) Just Click on your Profile and look to the address bar:
+    http://127.0.0.1/torrentpier/forum/profile.php?mode=viewprofile&u=2
+2 - is my ID.
+
+
+------------------------------------------------------------------------------

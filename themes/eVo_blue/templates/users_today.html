@@ -1,0 +1,28 @@
+<table class="tablebg" width="100%" cellspacing="0">
+<tr><td>
+<div class="caption">
+<div class="cap-left">
+<div class="cap-right">
+<a class="c4" style="cursor: pointer;float:left;" onclick="toggle2('nnUsers_active_in_the_past_24_hours');"><img title="Expand item" id="nnUsers_active_in_the_past_24_hoursimg" src="themes/eVo_blue/pics/minus.gif"  alt="+"></a>Users active in the past 24 hours
+</div>
+</div>
+</div>
+
+</td></tr><tr valign="middle">
+<td  class="row3" >
+<div id="nnUsers_active_in_the_past_24_hours">
+<!-- BEGIN user_today -->
+<a href="user.php?op=profile&amp;id={user_today.ID}" title="{user_today.LAST_CLICK} {L__btago}"><font color="{user_today.COLOR}">{user_today.USERNAME}</font></a>
+			{user_today.LEVEL_ICON}
+			<!-- IF user_today.WARNED --><img src="images/warning.gif" title="warned" alt="warned" /><!-- ENDIF -->
+			<!-- IF user_today.DONER --><img src="images/donator.gif" height="16" width="16" title="donator" alt="donator" /><!-- ENDIF -->
+, 
+<!-- END user_today -->
+</div>
+
+</td></tr>
+<tr>
+<td class="cat" colspan="7" valign="middle" align="center"></td>
+</tr>
+</table>
+<br clear="all" >
