@@ -1,0 +1,83 @@
+<?php
+/*
+*-------------------------------phpMyBitTorrent--------------------------------*
+*--- The Ultimate BitTorrent Tracker and BMS (Bittorrent Management System) ---*
+*--------------   Created By Antonio Anzivino (aka DJ Echelon)   --------------*
+*-------------               http://www.p2pmania.it               -------------*
+*------------ Based on the Bit Torrent Protocol made by Bram Cohen ------------*
+*-------------              http://www.bittorrent.com             -------------*
+*------------------------------------------------------------------------------*
+*------------------------------------------------------------------------------*
+*--   This program is free software; you can redistribute it and/or modify   --*
+*--   it under the terms of the GNU General Public License as published by   --*
+*--   the Free Software Foundation; either version 2 of the License, or      --*
+*--   (at your option) any later version.                                    --*
+*--                                                                          --*
+*--   This program is distributed in the hope that it will be useful,        --*
+*--   but WITHOUT ANY WARRANTY; without even the implied warranty of         --*
+*--   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the          --*
+*--   GNU General Public License for more details.                           --*
+*--                                                                          --*
+*--   You should have received a copy of the GNU General Public License      --*
+*--   along with this program; if not, write to the Free Software            --*
+*-- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA --*
+*--                                                                          --*
+*------------------------------------------------------------------------------*
+*------              ©2005 phpMyBitTorrent Development Team              ------*
+*-----------               http://phpmybittorrent.com               -----------*
+*------------------------------------------------------------------------------*
+*------                    Hacked For phpMyBitTorrent                   -------*
+*----------------                 By joeroberts                   -------------*
+*------------------------------------------------------------------------------*
+*/
+
+#if (eregi("donations_block.php",$_SERVER["PHP_SELF"])) die("You cannot access this file directly.");
+
+#echo $_SERVER['HTTP_USER_AGENT'];
+
+
+if ($donations){
+OpenTable(_lastdonors);
+#echo ".$browser.";
+#if ($b == "ff") $fs="3";
+#if ($b == "ie") $fs="1";
+#echo "<br><br><center><font size='1' color=\"white\">";  
+#echo "<center>";  
+#include ("ptcdonate1.htm");
+#include ("blocks/sofar_block.php");
+#echo "<br>";
+#echo "<center><br>Last Donors";
+#echo "<br>----------------";
+$query="SELECT * FROM donors ORDER BY `id` DESC";
+
+$result=mysql_query($query);
+$num = mysql_num_rows ($result);
+if ($num > 0 ) {
+$i=0;
+$num2=6;
+
+echo "<table border=\"1\" cellspacing=\"0\" cellpadding=\"5\"><tr><td>Name</td><td>Donated</td></tr>";
+if ($num<6) $num2=$num;
+while ($i < $num2) {
+$first_name = mysql_result($result,$i,"first_name");
+$last_name = mysql_result($result,$i,"last_name");
+$payers_email = mysql_result($result,$i,"payers_email");
+$mc_gross = mysql_result($result,$i,"mc_gross");
+$date = mysql_result($result,$i,"date");
+$id = mysql_result($result,$i,"id");
+$f=substr($first_name,0,11);
+$l=substr($last_name,0,1);
+echo "<tr><td>".$f." ".$l.". </td>";
+echo "<td align=right>$".$mc_gross."</td></tr>";
+
+
+++$i; } } else { echo "<tr><td>The database is empty</td></tr>"; }
+echo "</table>";
+
+
+
+
+
+CloseTable (_lastdonors);
+}
+?>

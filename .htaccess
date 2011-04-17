@@ -1,0 +1,29 @@
+# $Author: joerobe $
+# $Date: 2007/08/08 12:27:07 $
+# $Last Revision: 2005/09/25 1:17 $
+
+# deny most common files except PHP
+
+<FilesMatch "\.(inc|tpl|h|ihtml|sql|ini|conf|class|bin|spd|theme|module|torrent)$">
+deny from all
+</FilesMatch>
+
+<Limit GET POST>
+  Order Allow,Deny
+  Allow from all
+</Limit>
+<Limit PUT>
+  Deny from all
+</Limit>
+
+#Add MIME-Types
+AddType application/x-bittorrent .torrent
+
+#HTTP Error Management: works ONLY on root directory. Add yourself your subdirectory
+#IE if phpMyBitTorrent is installed in http://www.yoursite.com/mydir change
+#/httperror.php.... to /mydir/httperror.php...
+ErrorDocument 400 /httperror.php?errid=400
+ErrorDocument 401 /httperror.php?errid=401
+ErrorDocument 403 /httperror.php?errid=403
+ErrorDocument 404 /netError.xhtml?e=fileNotFound&u=url&d=fileNotFound
+ErrorDocument 500 /httperror.php?errid=500
