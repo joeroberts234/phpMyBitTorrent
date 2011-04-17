@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" language="JavaScript" src="{SITE_URL}/bbcode.js"></script><!--[if lt IE 7]>
+<script defer type="text/javascript" src="{SITE_URL}/pngfix.js"></script><![endif]--><title>{SITENAME}</title>
+<link rel="StyleSheet" href="{SITE_URL}/themes/eVo_blue/style.css" type="text/css">
+<script type="text/javascript" src="{SITE_URL}/global.js"></script>
+<title>{L__btlogin}</title>
+</head>
+
+<body>
+<!-- IF S_ERROR -->
+<div id="errorbox" >
+<span class="errorbox-title">{L__btlogin}</span>
+{S_ERROR_MESS}
+</div>
+<!-- ENDIF -->
+<table class="tablebg" width="100%" cellspacing="0">
+<tr><td>
+<div class="caption">
+<div class="cap-left">
+<div class="cap-right">
+<a class="c4" style="cursor: pointer;float:left;" onclick="toggle2('nnLog_In');"><img title="Expand item" id="nnLog_Inimg" src="themes/eVo_blue/pics/minus.gif"  alt="+"></a>Log In
+</div>
+
+</div>
+</div>
+</td></tr><tr valign="middle">
+<td  class="row3" ><div id="nnLog_In">
+<div id="errorbox" >
+ <span class="errorbox-title">{L__btlogin}</span>
+ <p>{L__btdenuser}</p>
+ <br>
+ <br>
+<form method="POST" action="login.php">
+<input type="hidden" name="op" value="login" />
+<!-- IF S_RETURN_PAGE --><input type="hidden" name="return" value="{S_RETURN_PAGE}" /><!-- ENDIF -->
+
+        <p align="center">{L__btusername}<br><input type="text" name="username" size="20" />
+
+<br>{L__btpassword}<br><input type="password" name="password" size="20" />
+<br>{L__btremember}<br><input type="checkbox" name="remember" value="yes" /></p>
+<p><input type="submit" value="Log In" /></p></form>
+<a href="user.php?op=lostpassword">{L__btlostpassword}</a></p>
+
+</div></div>
+</td></tr>
+<tr>
+<td class="cat" colspan="7" valign="middle" align="center"></td>
+</tr>
+</table>
+<br clear="all" >
+<!-- Start of StatCounter Code -->
+ <script type="text/javascript">
+ var sc_project=2789089;
+ var sc_invisible=0;
+ var sc_partition=28;
+ var sc_security="7d0a2fe3";
+ </script>
+
+ <script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c29.statcounter.com/2789089/0/7d0a2fe3/0/" alt="web metrics" ></a></div></noscript>
+
+</body>
+</html>
